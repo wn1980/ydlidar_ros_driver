@@ -175,10 +175,13 @@ int main(int argc, char **argv) {
       sensor_msgs::LaserScan scan_msg;
       sensor_msgs::PointCloud pc_msg;
 //      ydlidar_ros_driver::LaserFan fan;
+      /*
       ros::Time start_scan_time;
       start_scan_time.sec = scan.stamp / 1000000000ul;
       start_scan_time.nsec = scan.stamp % 1000000000ul;
       scan_msg.header.stamp = start_scan_time;
+      */
+      scan_msg.header.stamp = ros::Time::now();
       scan_msg.header.frame_id = frame_id;
       pc_msg.header = scan_msg.header;
 //      fan.header = scan_msg.header;
